@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>temperature converter</h2>
+<p>type a value in the fahren....:</p>
+<input type="number" placeholder="input temperature" id="nhietdo"
+onchange="temperatureConverter(this.value)">
+<p>celcius:<span id="result"></span></p>
+<script>
+function temperatureConverter(valnum){
+    let number = document.getElementById("nhietdo").value;
+    valnum=parseFloat(valnum);
+    let result =(valnum-32)/1.8;
+    document.getElementById("result").innerHTML= result
+}
+</script>
+</body>
+</html>
