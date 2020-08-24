@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function youConfirm(answer){
+        let result="";
+        if (answer){
+           result = prompt("input")
+        }else {
+            result="next";
+        }return result;
+    }
+    let confirmAnswer = confirm("you want input?")
+    let connfirm = youConfirm(confirmAnswer)
+    document.writeln(connfirm);
+</script>
+</body>
+</html>
