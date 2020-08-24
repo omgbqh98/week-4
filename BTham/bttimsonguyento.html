@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number){
+        if(number<2){
+            document.writeln(number+"không phải số nguyên tố")
+        }else {
+            for (let i = 2; i <=Math.sqrt(number) ; i++) {
+                if(number%i===0){
+                    return document.writeln(number+" "+"ko là số nguyên tố")
+                }
+            }return number+"là số nguyên tố";
+        }
+    }
+    let ktprime =isPrime(3);
+    document.writeln(ktprime);
+</script>
+</body>
+</html>
