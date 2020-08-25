@@ -1,10 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h2>Add New Product</h2>
+<input type="text" placeholder="new product" id="product">
+<input type="button" onclick="addProduct()" value="add">
+<br>
+<br>
+<div id="result"></div>
+
+<script>
+    let arr = ["iphone", "samsung"];
+    createTable(arr);
+    function createTable() {
+        let string = "<table width='50%'>"
+        string += "<tr>"
+        string += "<td></td>"
+        string += "<td>Name Product:</td>"
+        string += "</tr>"
+        for (let i = 0; i < arr.length; i++) {
+            string += "<tr>"
+            string += "<td>" + (i + 1) + "</td>"
+            string += "<td>" + arr[i] + "</td>"
+            string += "<td><input type='button' value='edit' onclick='editProduct("+i+")'></td>"
+            string += "<td><input type='button' value='delete' onclick='deleteProduct("+i+")'></td>"
+            string += "</tr>"
+        }
+        string += "</table>";
+        document.getElementById('result').innerHTML = string;
+    }
+    function saveProduct(product){
+        arr.push(product);
+        createTable(arr);
+    }
+    function addProduct(){
+        let product =document.getElementById("product").value;
+        if(product!=""){
+            saveProduct(product)
+        }else {
+            alert("vui lòng nhập sản phẩm")
+        }document.getElementById("product").focus();
+    }
+    function editProduct(index){
+        let newProduct = prompt("input new name:",arr[index]);
+        arr[index]=newProduct;
+        createTable(arr);
+    }
+    function deleteProduct(index){
+        if(confirm("bạn có chắc chắn muốn xóa?")){
+            arr.splice(index,1)
+            createTable(arr);
+        }
+    }
+</script>
 </body>
 </html>
