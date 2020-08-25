@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="number" placeholder="input r" oninput="call(this.value)" id="dientich">
+<p>result<span id="result"></span></p>
+<script>
+    function perimeter(r) {
+        let C = 2*r* 3.14
+        return C;
+    }
+
+    function acreage(r) {
+        let S = (r * r) * 3.14;
+        return S;
+    }
+    function call(){
+        r = document.getElementById("dientich").value
+       let chuVi= perimeter(r)
+       let dienTich= acreage(r)
+        document.getElementById("result").innerHTML=chuVi;
+        document.getElementById("result").innerHTML=dienTich;
+    }
+
+</script>
+</body>
+</html>
